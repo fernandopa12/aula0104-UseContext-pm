@@ -5,6 +5,7 @@ import TelaList from './src/telas/TelaList';
 import {NavigationContainer} from '@react-navigation/native'
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import { Button, Icon } from 'react-native-elements';
+import { UsuariosProvider } from './src/context/UsuariosContext';
 
 const Stack = createNativeStackNavigator()
 
@@ -12,6 +13,7 @@ export default function App() {
   
 
   return (
+    <UsuariosProvider>
     <NavigationContainer>
       <Stack.Navigator 
         initialRouteName='TelaList'
@@ -42,6 +44,7 @@ export default function App() {
         />
       </Stack.Navigator>
     </NavigationContainer>
+    </UsuariosProvider>
   )
 }
 
