@@ -9,6 +9,7 @@ export default props=>{
     const[user,setUser]=useState(props.route.params?props.route.params:{})
     return(
         <View>
+            
             <Text>Nome</Text>
             <TextInput
                 value={user.nome}

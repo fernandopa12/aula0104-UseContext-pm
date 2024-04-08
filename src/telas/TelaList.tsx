@@ -1,8 +1,14 @@
-import { Avatar, Button, Icon, ListItem, Text } from "react-native-elements";
+import { Avatar, Button, Icon, ListItem, } from "react-native-elements";
 import { Alert, FlatList } from "react-native";
-import DadosUsuarios from "../dados/DadosUsuarios";
+//import DadosUsuarios from "../dados/DadosUsuarios";
+import { useContext } from "react";
+import UsuariosContext from "../context/UsuariosContext";
+
+
 
 export default props=>{
+
+    const {state}= useContext(UsuariosContext)
     
     function getUsuarios({item}){
         return(
@@ -41,9 +47,10 @@ export default props=>{
             </ListItem>
         )
     }
+
     return(
         <FlatList
-            data={DadosUsuarios}
+            data={state.DadosUsuarios}
             renderItem={getUsuarios}
         />
     )
